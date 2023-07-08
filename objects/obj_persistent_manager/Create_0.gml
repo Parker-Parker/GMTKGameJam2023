@@ -1,24 +1,22 @@
-// Create a global particle system that is persistent, so it can be used throughout the game
-global.part_system = part_system_create_layer("Instances", true);
+/// @description Persistent Manager
 
-// If the game is running on a browser, it changes the window and application surface
-// size to fit the browser area. It uses the height to ensure the aspect ratio stays the same.
-if (os_browser != browser_not_a_browser)
-{
-	var _aspect = 1920/1080;
 
-	window_set_size(display_get_height() * _aspect, display_get_height());
 
-	surface_resize(application_surface, display_get_height() * _aspect, display_get_height());
+// This variable tells you whether or not a popup menu currently exists
+global.popup_menu_exists = false;
 
-	display_set_gui_size(1920, 1080);
-}
+// This variable tells you whether or not the menu is locked.
+// If this variable is true, it prevents you from interacting with instances
+global.menu_lock = false;
 
-// Play music track with looping enabled
-audio_play_sound(snd_music_level, 0, true);
+// This variable stores the current screenshot id if one exists. Otherwise, it will store -1.
+global.screen_shot_id = -1;
 
-// Set the falloff model used for all audio emitters, like in obj_end_gate
-audio_falloff_set_model(audio_falloff_linear_distance_clamped);
+// Turn off drawing the default cursor
+window_set_cursor(cr_none);
 
-// Set listener orientation for proper 3D audio
-audio_listener_orientation(0, 0, 1000, 0, -1, 0);
+// Give the cursor a sprite
+cursor_sprite = spr_cursor;
+
+
+

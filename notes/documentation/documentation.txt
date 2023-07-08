@@ -1,138 +1,114 @@
 This note is high-level documentation for the core parts of this template project.
 All events in this project are commented, so you can open any event and read the comments to understand what it does, and how it works.
 
-The following are sub-groups present in the Objects group:
 
-# CHARACTERS
+# How to Create New Levels
 
-obj_character_parent is the parent object of all characters (including the player and any enemies).
-Here are descriptions for its events:
-
-	Create			Initialises properties for all characters.
-	Begin Step		Checks if the character is grounded, and stores that position. Applies friction to the character's velocity.
-	Step			Handles movement and collision checking for the character.
-	End Step		Flips the character's sprite horizontally based on its X velocity. Handles what happens when the character's health is depleted. Also handles invincibility frames.
-
-
-obj_player is the main player object and a child of obj_character_parent.
-
-	Create			Initialises properties for the player.
-	Begin Step		(Inherited from parent, unchanged.)
-	Step			Sets audio listener position.
-	End Step		Handles transitions to other sprites based on the currently assigned sprite and conditions.
-	Alarm 0			Stops Knockback.
-	Key Down Left	Moves the player left.
-	Key Down Right	Moves the player right.
-	Key Down A		Runs the Key Down Left event (mimics its behaviour), for WASD input.
-	Key Down D		Runs the Key Down Right event (mimics its behaviour), for WASD input.
-	Key Press Space	Makes the player jump.
-	-><- obj_coin			Handles collision with coins, collecting them.
-	-><- obj_end_gate		Handles collision with the end gate, which takes you to the next level.
-	-><- obj_enemy_parent	Handles collision with enemy. Defeats the enemy if the player jumped on it, otherwise hurts the player.
-	-><- obj_hurt_zone		Handles collision with hurt zones.
-	Outside Room	Handles respawning when the player is outside the room.
-	Animation End	Stops certain animations (e.g. jump and fall) when their animations end.
-	Broadcast Message		Receives broadcast messages from the spr_player_walk sprite for the footstep effects and sound.
-
-obj_player_defeated appears in place of obj_player when the player is defeated. It jumps up and restarts the room when it exits the screen.
-
-obj_player_end_level appears when the player reaches the end gate. It fades away and then the level ends.
-
-
-
-# ENEMY SYSTEM
-
-obj_enemy_parent is a child of obj_character_parent and the parent of all enemies.
-
-	Create			Initialises properties for all enemies.
-	End Step		Turns the enemy to the other direction if it finds a wall or ledge in front of it.
-
-obj_enemy1 is the first (and only) enemy in the template.
-
-	Create			Changes properties for this particular enemy.
-
-obj_enemy1_defeated appears in place of obj_enemy1 when it's defeated. It plays its animation once and then destroys itself.
-
-
-
-# MANAGERS
-
-The "Managers" group contains objects that manage things in the background. So they are not visible or interactive, but listen silently in the background
-and perform their actions.
-
-	obj_game_manager: This creates the HUD sequence, and manages pausing.
-	obj_gamepad_input: This manages gamepads and allows the player to be controlled using a gamepad. It's a persistent object that's created in the first room (rm_menu) and lasts throughout the whole game.
-	obj_parallax: This is placed in game levels for parallax bacgrounds.
-	obj_persistent_manager: This is another persistent manager object created in rm_menu. It creates a particle system that is used through the game for any particles.
-
-
-
-# ENVIRONMENT
-
-	obj_collision: This is the parent of all objects that can collide with characters (e.g. blocks). If you want to make a platform or any other object that characters can stand on, use this as a parent.
-				   The check_collision function (in scr_collisions) checks for collisions with this object (along with tiles).
+	To create a new first create a new room that is the same width and height as the current rooms.
+	I recommend duplicating rm_level_1 and removing what you don't want from it so that you have all
+	the necessary layers. 
 	
-	Blocks: This folder contains blocks that the player can hit with its head.
-	Editor: This contains placeable objects that aren't visible in-game but still interact with the player in some way.
-	Interactive: This contains environment objects that are interactive but don't fall into any other category.
-	Items: This contains collectible items, like coins.
-
-
-
-# HUD
-
-This group contains objects that are used in the HUD sequence (seq_game_hud). They appear on the GUI layer (using the Draw GUI event) and show the player's stats.
-
-
-
-# UI
-
-This group contains buttons and other UI-related objects.
-
-
-
-# VFX
-
-This contains objects that are purely visual, like the dust VFX. They play their animation once and then get destroyed.
-
-obj_player_defeat_animation is an exception, which handles the pixelate transition that appears when the player is defeated.
-This object is Persistent so it's not destroyed when the room is restarted. Instead it's manually destroyed when its transition is complete.
-
-
-
-
-
-# SEQUENCES
-
-There are five Sequences in this project:
-
-	seq_game_hud: This is created when a level starts and initialises the objects that display HUD information.
-				  Using this Sequence you can organise your HUD and set where certain elements appear.
+	Then build out your level however you want. The fences and paths are done with sprites. All the 
+	other objects need to be depth sorted and therefore are objects in the Environment folder. 
+	You can create your own path and use it for the path variable. 
 	
-	seq_game_over: This is placed in the rm_end room and appears when the game is over.
+	Then duplicate obj_wave_level_1 and change the level_path variable to be the path in the room and 
+	design your waves however you want. You need at least one wave, but you can make as many as you wish.
 	
-	seq_main_menu: This is placed in rm_menu and appears when the game begins.
+	Make sure each level has an object of obj_gameplay_manager in it (only one) and wave level object (only one)
 	
-	seq_pause_menu: This appears when the game is paused using the Escape key.
+	Finally, go to the Buttons folder and have the button_start user event 0 send you to your new room.
 	
-	seq_touch_controls: This contains the layout of the touch controls.
-						If you want to disable touch controls on Opera GX, remove the appropriate condition from the Create event in obj_game_manager.
+	
+# How to Change Important Starting Variables
+
+	You can change the starting health and money in the obj_gameplay_manager.
+	You can change what the waves look like in obj_wave_level_1 (or any wave objects you create)
+	You can change the health and speed of the enemies in obj_zombie and obj_frankenstein
+	You can change the cost of the archer tower in obj_button_tower_buy_archer and the cost of the arc tower in obj_button_tower_buy_arc
 	
 
 
 # SCRIPTS
 
-Collisions
+GameplayScripts
+	This script file contains a number of scripts used throughout the game
 
-	This script contains one function called check_collision, which checks for a collision at the given delta coordinates.
-	It checks against the Tile Layer "CollisionTiles" and the parent object obj_collision.
-
-
-
-# ROOMS
-
-	rm_menu is the main menu room and opens first.
-	rm_end is the last room.
-	All other rooms are in-game levels.
+WaveScripts
+	This script file contains several scripts and one constructor used for creating and managing waves
 
 
+# Objects
+
+	# Managers
+		
+		obj_persistent_manager
+			The persistent manager is created in the first room (rm_menu) and is persistent. In initializes
+			all the global variables this game uses and sets up a few other game level variables (such as the cursor).
+			It also controls the music change using the Room Start event. 
+		
+		obj_gameplay_manager
+			This object should be created at the start of the level. You can adjust the starting village health and money
+			in this object.
+	
+		obj_wave_manager
+			The wave manager manages the the waves. You should not use this object in a room. Use a child of it instead like
+			obj_wave_level_1
+		
+		obj_wave_level_1
+			This object is a child of the wave manager. It should be placed in the room level. You should only have one of them.
+			You can create different versions for different levels.
+		
+	# Buttons
+		This folder contains the buttons that are used on the GUI layer.
+		
+	# HUD
+		This folder contains non-interactable HUD elements
+		
+	# Enemies
+		This folder contains the enemies and enemy related objects, such as the health bar or defeated enemy animations.
+		You can adjust the enemy speed, health, or what they are worth when destroyed in obj_zombie and obj_frankenstein.
+		
+	# Tower Buttons
+		This folder probably contains the most complex objects in this project. It includes both the popup menus which work a lot like the Buttons do
+		but in the room, not on the GUI layer, and the towers themselves. This would be a good folder to look at if you want a challange. 
+		
+	# Projectiles
+		This folder contains the projectiles and arc bolts along with some animations for them. You can change the damage
+		an arrow does in the collision event with obj_enemy_parent and the damage an arc does in the tower_arc step event for the
+		first arc and obj_arc_new for any chaining arcs (search for the deal_damage function).
+	
+	# Environment
+		This folder contains environment objects that need to be depth sorted and therefore need to be objects.
+		Only the parent has code. All children do is the sprite.
+
+
+# Sequences
+	
+	There are a lot of sequences. Sequences are used for all sorts of things in this project. There are sequences that 
+	control various popup menus or tower menus, and there are sequences which create buttons. There are also sequences
+	that are used to animate objects or as special effects. Be sure to take a look at some of the different sequences
+	and how they are used in code.
+
+
+# Rooms
+
+	There are two rooms. The main menu and rm_level_1. The main menu needs to be the starting room. 
+	Currently, there is only one level, but you can create more (see How to Create New Levels)
+	
+
+# Paths
+
+	Paths are what enemies follow to the village. When they reach the end of a path they will deal damage to the village.
+	There is one path. You can create more and set them to be used in obj_wave_level_1 or any children of obj_wave_manager
+	you create.
+	
+	
+# Shaders
+	
+	There is one shader that is used for the hitflash when you deal damage to an enemy
+
+	
+	
+	
+	

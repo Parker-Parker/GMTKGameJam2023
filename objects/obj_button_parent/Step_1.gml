@@ -1,3 +1,5 @@
+/// @description Button Parent
+
 // Here we're getting the X position of the mouse on the GUI layer.
 // The Draw GUI event is used to draw the button, which is a separate layer
 // on top of the game. So input for these buttons must also be taken on the GUI layer.
@@ -26,24 +28,22 @@ if (collision_point(_mouse_gui_x, _mouse_gui_y, object_index, false, false) == i
 	{
 		// Change the frame to the idle frame (0)
 		image_index = 0;
-	
-		// Call User Event 0 where the button performs its actions
-		event_user(0);
-	
+		
 		// Reset the scale so the button appears at its normal size
 		image_xscale = 1;
 		image_yscale = 1;
-	
-		// Play the button press sound effect
-		audio_play_sound(snd_button_press_01, 0, 0);
+		
+		// Call User Event 0 where the button performs its actions
+		event_user(0);
 	}
+	
 }
 // If the mouse is not hovering,
 else
 {
 	// Change the frame to the idle frame (0)
 	image_index = 0;
-
+	
 	// Reset the scale so the button appears at its normal size
 	image_xscale = 1;
 	image_yscale = 1;

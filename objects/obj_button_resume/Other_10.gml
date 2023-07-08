@@ -1,6 +1,7 @@
-// Run the Key Press - Escape key event in obj_game_manager so
-// it resumes the game
-with (obj_game_manager)
-{
-	event_perform(ev_keypress, vk_escape);
-}
+/// @description Resume Button
+
+// Unpause the game
+pause_or_unpause_game();
+
+// Play the button press sound effect
+audio_play_sound(snd_button_click, 0, false);

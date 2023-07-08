@@ -1,6 +1,20 @@
-// If we're in the end room
-if (room == rm_end)
+/// @description Persistent Manager
+
+
+// Handle background music based on the room
+if (room == rm_menu)
 {
-	// Play music track with looping enabled
-	audio_play_sound(snd_music_level, 0, 1);
+	// Stop the level's music
+	audio_stop_sound(snd_music_level);
+	
+	// Play the menu's music
+	audio_play_sound(snd_music_menu, 1, true);
+}
+else
+{
+	// Stop the menu's music
+	audio_stop_sound(snd_music_menu);
+	
+	// Play the level's music
+	audio_play_sound(snd_music_level, 1, true);
 }
