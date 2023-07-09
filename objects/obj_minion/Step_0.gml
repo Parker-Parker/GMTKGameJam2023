@@ -43,8 +43,12 @@ else
 	_target_x = obj_player.path[next_valid_path_point][0]
 	_target_y = obj_player.path[next_valid_path_point][1]
 }
-mp_grid_path(obj_player.a_star_grid, target_path, x, y, _target_x, _target_y, 1)
 
+array_foreach(hazards, function(_val, _id){
+mp_grid_add_instances(obj_player.a_star_grid, _val, 1)
+})
+mp_grid_path(obj_player.a_star_grid, target_path, x, y, _target_x, _target_y, 1)
+mp_grid_clear_all(obj_player.a_star_grid)
 
 // Makes Gobin change direction
 // Weighted avg of facing player, facing target location, and facing direction of motion
@@ -74,7 +78,7 @@ path_start(target_path, 7, 3, 0)
 // Pushes each other out harder the more they overlap
 with(obj_minion)
 {
-	if (id!=other.id) and (distance_to_object(other) < 15)
+	if (id!=other.id) and (distance_to_object(other) < 10)
 	{
 		var _dx = other.x - x
 		var _dy = other.y - y
@@ -86,6 +90,20 @@ with(obj_minion)
 		
 		move_and_collide(-overlap_push_strength*_dx, -overlap_push_strength*_dy, obj_wall, 10)
 	}
+}
+
+if distance_to_object(obj_player) < 20
+{
+	
+	var _dx = other.x - x
+	var _dy = other.y - y
+	
+	var _distance = sqrt(_dx*_dx + _dy*_dy)
+	
+	_dx = _dx/_distance
+	_dy = _dy/_distance
+	
+	move_and_collide(-overlap_push_strength*_dx, -overlap_push_strength*_dy, obj_wall, 10)
 }
 
 if(hp<=0){
