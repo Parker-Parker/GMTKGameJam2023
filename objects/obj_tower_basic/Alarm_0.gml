@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+
+
+
 if(fire_amount_per_shot<=1){
 	instance_create_depth(x,y,depth+1,ammo_type,{direction:fire_direction})	
 }
