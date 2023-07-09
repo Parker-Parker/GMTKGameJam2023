@@ -15,10 +15,16 @@
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Projectiles","order":4,"path":"folders/Objects/Projectiles.yy",},
+    {"name":"Towers","order":5,"path":"folders/Objects/Towers.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"sprite_bullet","order":3,"path":"sprites/sprite_bullet/sprite_bullet.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"obj_minion","order":2,"path":"objects/obj_minion/obj_minion.yy",},
+    {"name":"obj_tower_tracking","order":1,"path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},
+    {"name":"sprite_tower","order":4,"path":"sprites/sprite_tower/sprite_tower.yy",},
     {"name":"sprite_minion","order":1,"path":"sprites/sprite_minion/sprite_minion.yy",},
+    {"name":"ParkerTestRoom","order":1,"path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},
   ],
 }
