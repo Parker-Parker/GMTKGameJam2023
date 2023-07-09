@@ -3,4 +3,4 @@
 
 target_path = path_add()
 
-overlap_push_strength = 3
+overlap_push_strength = 5
