@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //TODO: uncommentthis
-//other.health -= damage
+other.hp -= damage
 instance_destroy()
 
 

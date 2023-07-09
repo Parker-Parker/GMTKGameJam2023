@@ -12,3 +12,5 @@ path_resolution = 100
 path_length = 30
 
 a_star_grid = mp_grid_create(0, 0, 250, 250, 20, 20)
+
+hp = 100

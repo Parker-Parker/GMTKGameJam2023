@@ -63,3 +63,19 @@ if (sqrt((x - path[0][0])*(x - path[0][0]) + (y - path[0][1])*(y - path[0][1])) 
 	
 }
 
+
+if(hp<=0){
+	
+	instance_create_depth(x,y,depth,obj_explosion,{damage:0})
+	var swap_target = instance_nearest(x, y, obj_minion)
+	if(instance_exists(swap_target)){
+		x = swap_target.x
+		y = swap_target.y
+		hp = 100
+		instance_destroy(swap_target)
+	}
+	else{
+		//round over :(	
+	}
+
+}

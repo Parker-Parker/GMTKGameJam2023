@@ -59,3 +59,10 @@ with(obj_minion)
 		move_and_collide(-overlap_push_strength*_dx, -overlap_push_strength*_dy, obj_wall, min(50/max(_distance, 0.01), 10))
 	}
 }
+
+if(hp<=0){
+	
+	instance_create_depth(x,y,depth,obj_explosion,{damage:0})
+	instance_destroy()
+
+}

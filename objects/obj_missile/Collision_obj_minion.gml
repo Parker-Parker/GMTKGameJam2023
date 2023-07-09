@@ -3,7 +3,7 @@
 
 
 ///TODO: uncomment this 
-//other.health -= damage
+
 
 //explode
 instance_create_depth(x,y,depth+1,obj_explosion)

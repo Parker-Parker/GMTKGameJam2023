@@ -3,7 +3,7 @@
 
 
 ///TODO: uncomment this 
-//other.health -= damage
+other.hp -= damage
 instance_destroy()
 
 

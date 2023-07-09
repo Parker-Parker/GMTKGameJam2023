@@ -15,3 +15,7 @@ for (var i = array_length(path); i > 0; i--)
 	draw_set_color(c_white)
 	draw_text(path[i-1][0], path[i-1][1], string(path[i-1][2]))
 }
+
+
+draw_set_color(c_red)
+draw_text(x - 30, y-30, string(hp))

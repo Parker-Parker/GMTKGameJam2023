@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-image_angle = random(360)
-already_hit = []
 
+draw_self()
+
+
+draw_set_color(c_red)
+draw_text(x - 30, y-30, string(hp))

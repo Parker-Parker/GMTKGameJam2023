@@ -11,6 +11,8 @@
     {"name":"inst_7A38585C","path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},
     {"name":"inst_1A253FCA","path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},
     {"name":"inst_7ACE2D98","path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},
+    {"name":"inst_3CFD7C30","path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},
+    {"name":"inst_6C185974","path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -25,10 +27,12 @@
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":160.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7ACE2D98","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_tower_tracking","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_tower_tracking","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"propertyId":{"name":"fire_spread","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"value":"10",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_tower_tracking","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"propertyId":{"name":"fire_amount_per_shot","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"value":"3",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_tower_tracking","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"propertyId":{"name":"fire_frequency","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"value":".5",},
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_tower_tracking","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"propertyId":{"name":"fire_amount_per_shot","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"value":"1",},
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_tower_tracking","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"propertyId":{"name":"fire_frequency","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"value":"3",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_tower_tracking","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"propertyId":{"name":"range","path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},"value":"600",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":160.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3CFD7C30","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minion","path":"objects/obj_minion/obj_minion.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":320.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6C185974","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minion","path":"objects/obj_minion/obj_minion.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":480.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
