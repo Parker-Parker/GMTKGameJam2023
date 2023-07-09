@@ -45,6 +45,8 @@ if (sqrt(xspeed*xspeed + yspeed*yspeed) > maxspeed)
 // Moves char
 move_and_collide(xspeed, yspeed, obj_wall, 5)
 
+image_angle = point_direction(0, 0, xspeed, yspeed) + 90
+
 // path follow code
 if (sqrt((x - path[0][0])*(x - path[0][0]) + (y - path[0][1])*(y - path[0][1])) > path_resolution)
 {
