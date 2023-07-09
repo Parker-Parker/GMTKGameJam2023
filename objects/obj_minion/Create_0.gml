@@ -9,3 +9,5 @@ last_x = x
 last_y = y
 
 hp = 300
+
+hazards = [obj_bomb, obj_bullet, obj_fire, obj_missile]
