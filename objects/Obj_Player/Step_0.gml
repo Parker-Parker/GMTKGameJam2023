@@ -49,20 +49,16 @@ move_and_collide(xspeed, yspeed, obj_wall, 5)
 if (sqrt((x - path[0][0])*(x - path[0][0]) + (y - path[0][1])*(y - path[0][1])) > path_resolution)
 {
 	// Adds current position to path array if player has sufficienctly moved far enough
-	array_insert(path, 0, [x,y,100 + 100/path_length])
+	array_insert(path, 0, [x,y])
 	// If the path array is too long, removes oldest position
 	if (array_length(path) > path_length)
 	{
 		array_delete(path, path_length + 1, 1)
 	}
-	// Subtracts points from each point so oldest point has lowest score and newest point has highest
-	array_foreach(path, function(_val, _index)
-	{
-		_val[2] -= 100/path_length
-	})
 	
 }
 
+<<<<<<< Updated upstream
 
 if(hp<=0){
 	
@@ -78,4 +74,17 @@ if(hp<=0){
 		//round over :(	
 	}
 
+=======
+// last location code
+if (sqrt((x - last_location[0][0])*(x - last_location[0][0]) + (y - last_location[0][1])*(y - last_location[0][1])) > last_location_resolution)
+{
+	// Adds current position to last location array if player has sufficienctly moved far enough
+	array_insert(last_location, 0, [x,y])
+	// If the path array is too long, removes oldest position
+	if (array_length(last_location) > last_location_length)
+	{
+		array_delete(last_location, last_location_length + 1, 1)
+	}
+	
+>>>>>>> Stashed changes
 }

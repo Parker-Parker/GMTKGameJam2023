@@ -4,12 +4,10 @@
 draw_self()
 
 draw_set_color(c_white)
-draw_text(100, 100, string(sqrt(xspeed*xspeed + yspeed*yspeed)))
-
-draw_set_color(c_white)
-draw_text(300, 300, string(path))
+draw_text(300, 300, string(last_location))
 
 
+<<<<<<< Updated upstream
 for (var i = array_length(path); i > 0; i--)
 {
 	draw_set_color(c_white)
@@ -19,3 +17,5 @@ for (var i = array_length(path); i > 0; i--)
 
 draw_set_color(c_red)
 draw_text(x - 30, y-30, string(hp))
+=======
+>>>>>>> Stashed changes

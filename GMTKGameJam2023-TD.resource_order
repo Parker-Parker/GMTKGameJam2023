@@ -22,8 +22,13 @@
     {"name":"sprite_bullet","order":3,"path":"sprites/sprite_bullet/sprite_bullet.yy",},
     {"name":"obj_explosion","order":3,"path":"objects/obj_explosion/obj_explosion.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
+<<<<<<< Updated upstream
     {"name":"obj_bomb","order":1,"path":"objects/obj_bomb/obj_bomb.yy",},
+=======
+    {"name":"Sprite5","order":5,"path":"sprites/Sprite5/Sprite5.yy",},
+>>>>>>> Stashed changes
     {"name":"obj_minion","order":2,"path":"objects/obj_minion/obj_minion.yy",},
+    {"name":"Room3","order":2,"path":"rooms/Room3/Room3.yy",},
     {"name":"obj_tower_tracking","order":1,"path":"objects/obj_tower_tracking/obj_tower_tracking.yy",},
     {"name":"sprite_tower","order":4,"path":"sprites/sprite_tower/sprite_tower.yy",},
     {"name":"sprite_explosion","order":5,"path":"sprites/sprite_explosion/sprite_explosion.yy",},
