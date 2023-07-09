@@ -47,6 +47,7 @@ else
 array_foreach(hazards, function(_val, _id){
 mp_grid_add_instances(obj_player.a_star_grid, _val, 0)
 })
+mp_grid_add_instances(obj_player.a_star_grid, obj_wall, 0)
 mp_grid_path(obj_player.a_star_grid, target_path, x, y, _target_x, _target_y, 1)
 mp_grid_clear_all(obj_player.a_star_grid)
 
