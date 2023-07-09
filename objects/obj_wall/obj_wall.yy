@@ -26,8 +26,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "Sprite_Player",
-    "path": "sprites/Sprite_Player/Sprite_Player.yy",
+    "name": "sprite_wall",
+    "path": "sprites/sprite_wall/sprite_wall.yy",
   },
   "spriteMaskId": null,
   "visible": true,

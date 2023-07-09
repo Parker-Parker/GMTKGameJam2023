@@ -45,10 +45,30 @@ else
 }
 
 array_foreach(hazards, function(_val, _id){
-mp_grid_add_instances(obj_player.a_star_grid, _val, 1)
+mp_grid_add_instances(obj_player.a_star_grid, _val, 0)
 })
+mp_grid_add_instances(obj_player.a_star_grid, obj_wall, 0)
 mp_grid_path(obj_player.a_star_grid, target_path, x, y, _target_x, _target_y, 1)
 mp_grid_clear_all(obj_player.a_star_grid)
+
+// moves minion away from hazards
+array_foreach(hazards, function( _val, _id){
+	if instance_exists(_val)
+	{
+		if distance_to_object(instance_nearest(x, y, _val)) < 20
+		{
+			var _danger = instance_nearest(x, y, _val)
+			var _dx = x - _danger.x
+			var _dy = y - _danger.y
+			var _distance = sqrt(_dx*_dx + _dy*_dy)
+			_dx /= _distance
+			_dy /= _distance
+			
+			move_and_collide(_dx*3, _dy*3, obj_wall, 5)
+			
+		}
+	}
+})
 
 // Makes Gobin change direction
 // Weighted avg of facing player, facing target location, and facing direction of motion

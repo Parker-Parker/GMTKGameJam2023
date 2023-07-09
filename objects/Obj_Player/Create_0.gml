@@ -15,6 +15,6 @@ last_location = [[x,y]]
 last_location_resolution = 1
 last_location_length = 20
 
-a_star_grid = mp_grid_create(0, 0, 250, 250, 20, 20)
+a_star_grid = mp_grid_create(0, 0, 100, 100, 50, 50)
 
 hp = 100
