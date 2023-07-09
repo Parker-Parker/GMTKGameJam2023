@@ -3,18 +3,11 @@
 
 draw_self()
 
-draw_set_color(c_white)
-draw_text(100, 100, string(sqrt(xspeed*xspeed + yspeed*yspeed)))
 
 draw_set_color(c_white)
-draw_text(300, 300, string(path))
+draw_text(300, 300, string(last_location))
 
 
-for (var i = array_length(path); i > 0; i--)
-{
-	draw_set_color(c_white)
-	draw_text(path[i-1][0], path[i-1][1], string(path[i-1][2]))
-}
 
 
 draw_set_color(c_red)

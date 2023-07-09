@@ -22,6 +22,7 @@
     {"name":"sprite_bullet","order":3,"path":"sprites/sprite_bullet/sprite_bullet.yy",},
     {"name":"obj_explosion","order":3,"path":"objects/obj_explosion/obj_explosion.yy",},
     {"name":"sprite_fire","order":8,"path":"sprites/sprite_fire/sprite_fire.yy",},
+    {"name":"Sprite5","order":9,"path":"sprites/Sprite5/Sprite5.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"obj_functions","order":6,"path":"objects/obj_functions/obj_functions.yy",},
     {"name":"obj_bomb","order":1,"path":"objects/obj_bomb/obj_bomb.yy",},

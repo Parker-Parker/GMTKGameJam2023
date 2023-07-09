@@ -7,9 +7,13 @@ xlr8 = 2
 xspeed = 0
 yspeed = 0
 
-path = [[x,y, 100]]
+path = [[x,y]]
 path_resolution = 100
 path_length = 30
+
+last_location = [[x,y]]
+last_location_resolution = 1
+last_location_length = 20
 
 a_star_grid = mp_grid_create(0, 0, 250, 250, 20, 20)
 
