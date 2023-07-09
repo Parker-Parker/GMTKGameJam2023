@@ -10,3 +10,8 @@ if(lifetime>0){
 
 }
 
+
+wall_timer = 3
+//wall_collision = false
+wall_collision = true
+alarm_set(6,60*wall_timer)
