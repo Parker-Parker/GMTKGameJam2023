@@ -42,4 +42,11 @@ if (sqrt(xspeed*xspeed + yspeed*yspeed) > maxspeed)
 	yspeed *= maxspeed/sqrt(xspeed*xspeed + yspeed*yspeed)
 }
 
-move_and_collide(xspeed, yspeed, Wall, 5)
+move_and_collide(xspeed, yspeed, obj_wall, 5)
+
+
+
+
+
+
+
