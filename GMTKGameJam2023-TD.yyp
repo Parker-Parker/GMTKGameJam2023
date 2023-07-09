@@ -40,9 +40,12 @@
   },
   "resources": [
     {"id":{"name":"sprite_bullet","path":"sprites/sprite_bullet/sprite_bullet.yy",},},
+    {"id":{"name":"obj_victory","path":"objects/obj_victory/obj_victory.yy",},},
     {"id":{"name":"obj_explosion","path":"objects/obj_explosion/obj_explosion.yy",},},
+    {"id":{"name":"sprite_finish","path":"sprites/sprite_finish/sprite_finish.yy",},},
     {"id":{"name":"temp","path":"sprites/temp/temp.yy",},},
     {"id":{"name":"sprite_fire","path":"sprites/sprite_fire/sprite_fire.yy",},},
+    {"id":{"name":"Victory","path":"rooms/Victory/Victory.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"obj_functions","path":"objects/obj_functions/obj_functions.yy",},},
     {"id":{"name":"obj_bomb","path":"objects/obj_bomb/obj_bomb.yy",},},
@@ -59,10 +62,12 @@
     {"id":{"name":"obj_castle","path":"objects/obj_castle/obj_castle.yy",},},
     {"id":{"name":"Title","path":"rooms/Title/Title.yy",},},
     {"id":{"name":"sprite_bomb","path":"sprites/sprite_bomb/sprite_bomb.yy",},},
+    {"id":{"name":"sprite_victory","path":"sprites/sprite_victory/sprite_victory.yy",},},
     {"id":{"name":"obj_missile","path":"objects/obj_missile/obj_missile.yy",},},
     {"id":{"name":"obj_tower_parent","path":"objects/obj_tower_parent/obj_tower_parent.yy",},},
     {"id":{"name":"obj_tower_basic","path":"objects/obj_tower_basic/obj_tower_basic.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_goal","path":"objects/obj_goal/obj_goal.yy",},},
     {"id":{"name":"sprite_missile","path":"sprites/sprite_missile/sprite_missile.yy",},},
     {"id":{"name":"ParkerTestRoom","path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},},
     {"id":{"name":"sprite_wall","path":"sprites/sprite_wall/sprite_wall.yy",},},
@@ -73,6 +78,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"Title","path":"rooms/Title/Title.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Victory","path":"rooms/Victory/Victory.yy",},},
     {"roomId":{"name":"ParkerTestRoom","path":"rooms/ParkerTestRoom/ParkerTestRoom.yy",},},
   ],
   "TextureGroups": [
